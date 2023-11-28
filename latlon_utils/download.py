@@ -3,6 +3,7 @@ import os
 import os.path as osp
 from urllib import request
 import xarray as xr
+import rioxarray as xrio
 import numpy as np
 import zipfile
 import glob
@@ -84,7 +85,7 @@ def download_wc_variable(name, outdir=None, res='5m', lat=None, lon=None):
 
         tiffs = sorted(glob.glob(osp.join(download_dir,
                                           'wc2.1_%s_%s_??.tif' % (res, name))))
-        da = xr.concat(list(map(xr.open_rasterio, tiffs)),
+        da = xr.concat(list(map(xrio.open_rasterio, tiffs)),
                        dim=xr.Variable(('month', ), np.arange(1, 13)))
         da.encoding = dict(zlib=True, complevel=4, least_significant_digit=4)
         da.name = name

@@ -54,11 +54,12 @@ setup(name='latlon-utils',
           'netCDF4',
           'shapely',
           'pandas',
+          'rioxarray'
       ],
       package_data={'latlon-utils': [
           osp.join('latlon_utils', 'data', '*'),
           ]},
       include_package_data=True,
-      tests_require=['pytest', 'rasterio', 'xarray', 'pytest-cov'],
+      tests_require=['pytest', 'rasterio', 'xarray', 'rioxarray', 'pytest-cov'],
       cmdclass={'test': PyTest},
       zip_safe=False)

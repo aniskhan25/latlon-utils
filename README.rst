@@ -13,14 +13,10 @@ necessary dependencies, namely netCDF4_, shapely_ and pandas_::
 
     conda install netcdf4 shapely pandas
 
-To enable the download of the WorldClim data, you will also need rasterio_ and
+To enable the download of the WorldClim data, you will also need rasterio_, rioxarray_ and
 xarray_ (you can skip this if you already downloaded the data) via::
 
-    conda install rasterio xarray
-
-Then install ``latlon_utils`` via::
-
-    pip install latlon_utils
+    conda install rasterio xarray rioxarray
 
 or from the source directory via::
 
